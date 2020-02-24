@@ -1,6 +1,7 @@
 class PartiesController < ApplicationController
     def index
         parties = Party.all
+        render json: parties
     end
 
     def create
@@ -20,6 +21,10 @@ class PartiesController < ApplicationController
 
     def party_params
         params.require(:party).permit(:name, :quest, :color)
+    end
+
+    def set_party
+        party = Party.find_by(id: params[:id])
     end
 
 end
