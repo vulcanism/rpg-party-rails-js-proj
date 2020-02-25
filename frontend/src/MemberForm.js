@@ -6,4 +6,14 @@ const generateMemberForm = (party) => {
 
     form.id = "create-member"
     formSubmit.id = "form-submit"
+
+    let nameInput = document.createElement("input")
+
+    let levelInput = document.createElement("input")
+
+    let genderInput = document.createElement("input")
+
+    let raceInput = document.createElement("input")
+
+    let roleInput = document.createElement("input")
 }
