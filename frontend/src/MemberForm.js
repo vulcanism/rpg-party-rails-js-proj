@@ -39,4 +39,14 @@ const generateMemberForm = (party) => {
 
 function formSubmission(e) {
     e.preventDefault();
+    let memberData = {
+        party_id: e.target.dataset.id,
+        name: e.target.elements.name.value,
+        level: e.target.elements.level.value,
+        gender: e.target.elements.gender.value,
+        race: e.target.elements.race.value,
+        role: e.target.elements.role.value
+    }
+    
+    saveMember(memberData)
 }
