@@ -30,3 +30,10 @@ function renderMembers(membersArray, party_id) {
       let newMember = new Member(member)        
     })    
   }
+
+function createMembers(party, membersArray) {
+    membersArray.forEach(member => {
+        let newMember = new Member(member);
+    party.members.push(newMember)
+    })
+  }
