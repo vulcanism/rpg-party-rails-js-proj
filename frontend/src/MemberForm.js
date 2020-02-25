@@ -8,12 +8,35 @@ const generateMemberForm = (party) => {
     formSubmit.id = "form-submit"
 
     let nameInput = document.createElement("input")
+    nameInput.setAttribute("name", "name")
+    nameInput.placeholder = "Name"
+    form.appendChild(nameInput)
 
     let levelInput = document.createElement("input")
+    levelInput.setAttribute("name", "level")
+    levelInput.placeholder = "Level"
+    form.appendChild(levelInput)
 
     let genderInput = document.createElement("input")
+    genderInput.setAttribute("name", "gender")
+    genderInput.placeholder = "Gender"
+    form.appendChild(genderInput)
 
     let raceInput = document.createElement("input")
+    raceInput.setAttribute("name", "race")
+    raceInput.placeholder = "Race"
+    form.appendChild(raceInput)
 
     let roleInput = document.createElement("input")
+    roleInput.setAttribute("name", "role")
+    roleInput.placeholder = "Role"
+    form.appendChild(roleInput)
+
+    form.appendChild(formSubmit)
+
+    document.querySelector('#create-member').addEventListener("submit", formSubmission)
+}
+
+function formSubmission(e) {
+    e.preventDefault();
 }
