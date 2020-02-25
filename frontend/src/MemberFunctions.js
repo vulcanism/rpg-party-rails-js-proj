@@ -37,3 +37,11 @@ function createMembers(party, membersArray) {
     party.members.push(newMember)
     })
   }
+
+function fetchMembers(party_id) {
+    return fetch(MEMBERS_URL)
+    .then(response => response.json())
+    .then(member => {
+        renderMembers(member.data, party_id);
+    })
+}
