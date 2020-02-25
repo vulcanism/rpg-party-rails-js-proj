@@ -9,5 +9,24 @@ function saveMember(memberData) {
         role: memberData.role
     }
 
+    let configObj = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(member)
+      };
     
+      return fetch(MEMBERS_URL, configObj)
+      .then(response => response.json())
+      .then(object => {        
+        console.log(object)
+      })
 }
+
+function renderMembers(membersArray, party_id) {
+    membersArray.forEach(member => {
+      let newMember = new Member(member)        
+    })    
+  }
