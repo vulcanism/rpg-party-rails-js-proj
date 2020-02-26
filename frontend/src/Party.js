@@ -32,5 +32,18 @@ class Party {
                 listMembers(party)
             })
         })
+
+        h2.appendChild(a)
+
+        partiesContainer.appendChild(partyDiv)
+        partyDiv.appendChild(h2)
+
+        const partyQuest = document.createElement("ul")
+        partyQuest.innerHTML = `Quest: ${this.quest}`
+        h2.appendChild(partyQuest)
+
+        const partyColor = document.createElement("ul")
+        partyColor.innerHTML = `Color: ${this.color}`
+        h2.appendChild(partyColor)
     }
 }
