@@ -8,3 +8,33 @@ let partyDiv = document.createElement("div")
 let memberDiv = document.createElement("div")
 partyDiv.id = "party-div"
 memberDiv.id = "member-div"
+
+function loadPage() {
+    partiesContainer.textContent = ""
+    membersContainer.textContent = ""
+
+    partyDiv.textContent = ""
+    memberDiv.textContent = ""
+
+    generatePartyForm();
+    fetchParties();
+    partiesContainer.appendChild(generatePartyForm());
+
+    document.querySelector("#create-party").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        let partyData = {
+            name: e.target.elements.name.value,
+            quest: e.target.elements.quest.value,
+            color: e.target.elements.color.value
+        }
+
+            e.target.elements.name.value = "";
+            e.target.elements.quest.value = "";
+            e.target.elements.color.value = "";
+
+            saveParty(partyData);
+    })
+}
+
+loadPage()
