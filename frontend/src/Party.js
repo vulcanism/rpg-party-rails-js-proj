@@ -1,8 +1,10 @@
 class Party {
-    constructor(id, name, quest, color) {
-        this.id = id;
-        this.name = name;
-        this.quest = quest;
-        this.color = color;
+    constructor(party) {
+        this.id = party.id;
+        this.name = party.name;
+        this.quest = party.quest;
+        this.color = party.color;
+        this.members = [];
+        allParties.push(this)
     }
 }

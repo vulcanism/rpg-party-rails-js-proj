@@ -7,5 +7,6 @@ class Member {
         this.race = race;
         this.role = role;
         this.party_id = partyId;
+        allMembers.push(this)
     }
 }
