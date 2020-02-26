@@ -32,6 +32,22 @@ function addParty(party) {
     a.innerHTML = `${party.name}`
 
     a.addEventListener("click", function(e) {
-        partiesContainer.textContet = "";
+        partiesContainer.textContent = "";
+
+        let partyFilter = allParties.filter(function(party) {
+            return e.target.innerText.toLowerCase() === party.name.toLowerCase()
+        })
+
+        partyFilter.forEach(party => {
+            generateMemberForm(party)
+            h2.textContent = party.name
+            h4.textContent = "Party"
+            partiesContainer.appendChild(h2)
+            partiesContainer.appendChild(h4)
+
+            listMembers(party)
+        })
     })
+
+    h2.appendChild(a)
 }
