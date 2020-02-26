@@ -3,27 +3,36 @@ class PartiesController < ApplicationController
 
     def index
         parties = Party.all
-        render json: parties
+        options = {
+            include: [:members]
+          }
+          render json: PartySerializer.new(teams, options)
     end
 
     def create
-        party = Party.new(party_params)
-        if party.save
-            render json: party
-        end
+        party = Party.create!(party_params)
+        options = {
+            include: [:members]
+          }
+        render json: PartySerializer.new(party)
     end
 
     def show
         party = Party.find_by(id: params[:id])
-        render json: party
+        options = {
+            include: [:members]
+          }
+          render json: PartySerializer.new(teams, options)
     end
 
     def update
+        party.update(party_params)
+        head :no_content
     end
 
     def destroy
         party.destroy
-        render json: party
+        head :no_content
     end
 
     private

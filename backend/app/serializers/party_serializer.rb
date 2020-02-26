@@ -1,4 +1,4 @@
-class TeamSerializer
+class PartySerializer
     include FastJsonapi::ObjectSerializer
   
     attributes :id, :name, :quest, :color

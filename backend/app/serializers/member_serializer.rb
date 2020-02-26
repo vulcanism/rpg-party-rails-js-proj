@@ -1,4 +1,4 @@
-class PlayerSerializer 
+class MemberSerializer 
     include FastJsonapi::ObjectSerializer
 
   attributes :party_id, :name, :level, :gender, :race, :role
