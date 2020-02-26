@@ -6,6 +6,9 @@ const generatePartyForm = () => {
     form.id = "create-party"
     formSubmit.id = "form-submit"
 
+    const currentParties = document.createElement("h2")
+    currentParties.textContent = "Current Parties"
+
     let nameInput = document.createElement("input")
     nameInput.setAttribute("name", "name")
     nameInput.placeholder = "Party Name"
@@ -22,6 +25,8 @@ const generatePartyForm = () => {
     form.appendChild(colorInput)
 
     form.appendChild(formSubmit)
+
+    form.appendChild(currentParties)
 
     return form
 }
