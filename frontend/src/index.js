@@ -9,6 +9,10 @@ let memberDiv = document.createElement("div")
 partyDiv.id = "party-div"
 memberDiv.id = "member-div"
 
+document.addEventListener("DOMContentLoaded", function() {
+    loadPage();
+})
+
 function loadPage() {
     partiesContainer.textContent = ""
     membersContainer.textContent = ""
@@ -36,5 +40,3 @@ function loadPage() {
             saveParty(partyData);
     })
 }
-
-loadPage()

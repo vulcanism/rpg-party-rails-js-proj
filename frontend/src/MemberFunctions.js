@@ -45,3 +45,10 @@ function fetchMembers(party_id) {
         renderMembers(member.data, party_id);
     })
 }
+
+function listMembers(party) {
+  partyDiv.textContent = "";
+  party.members.forEach(member => {    
+    addMember(member)
+  })
+}
