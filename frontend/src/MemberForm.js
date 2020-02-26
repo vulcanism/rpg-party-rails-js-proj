@@ -1,3 +1,5 @@
+let placeForm = document.querySelector("div.place-form")
+
 const generateMemberForm = (party) => {
     const form = document.createElement("form")
     form.setAttribute("data-id", party.id)
