@@ -6,7 +6,7 @@ class PartiesController < ApplicationController
         options = {
             include: [:members]
           }
-          render json: PartySerializer.new(teams, options)
+          render json: PartySerializer.new(parties, options)
     end
 
     def create
@@ -22,7 +22,7 @@ class PartiesController < ApplicationController
         options = {
             include: [:members]
           }
-          render json: PartySerializer.new(teams, options)
+          render json: PartySerializer.new(parties, options)
     end
 
     def update
