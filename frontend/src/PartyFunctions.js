@@ -62,3 +62,22 @@ function addParty(party) {
     partyColor.innerHTML = `Color: ${party.color}`
     h2.appendChild(partyColor)
 }
+
+function saveParty(party) {
+    return (
+        fetch(PARTIES_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(party)
+        })
+    )
+    .then(response => response.json())
+    .then(json => {
+        let newParty = new Party(json.data.attributes)
+        newParty.render()
+    })
+
+}
