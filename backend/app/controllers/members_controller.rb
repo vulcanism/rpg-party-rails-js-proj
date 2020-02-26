@@ -3,19 +3,19 @@ class MembersController < ApplicationController
 
     def index
         members = Member.all
-        render json: members
+        render json: MemberSerializer.new(members), include: [:party]
     end
 
     def create
         member = Member.new(member_params)
         if member.save
-            render json: member
+            render json: MemberSerializer.new(members), include: [:party]
         end
     end
 
     def show
         member = Member.find_by(id: params[:id])
-        render json: member
+        render json: MemberSerializer.new(members), include: [:party]
     end
 
     def update    
@@ -23,7 +23,7 @@ class MembersController < ApplicationController
 
     def destroy
         member.destroy
-        render json: member
+        head :no_content
     end
 
     private
