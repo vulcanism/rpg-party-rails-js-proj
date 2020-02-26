@@ -5,4 +5,23 @@ const generatePartyForm = () => {
 
     form.id = "create-party"
     formSubmit.id = "form-submit"
+
+    let nameInput = document.createElement("input")
+    nameInput.setAttribute("name", "name")
+    nameInput.placeholder = "Party Name"
+    form.appendChild(nameInput)
+
+    let questInput = document.createElement("input")
+    questInput.setAttribute("name", "quest")
+    questInput.placeholder = "Quest"
+    form.appendChild(questInput)
+
+    let colorInput = document.createElement("input")
+    colorInput.setAttribute("name", "color")
+    colorInput.placeholder = "Color"
+    form.appendChild(colorInput)
+
+    form.appendChild(formSubmit)
+
+    return form
 }
