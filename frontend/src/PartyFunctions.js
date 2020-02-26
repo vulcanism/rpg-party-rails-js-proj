@@ -50,4 +50,15 @@ function addParty(party) {
     })
 
     h2.appendChild(a)
+
+    partiesContainer.appendChild(partiesDiv)
+    partiesDiv.appendChild(h2)
+
+    const partyQuest = document.createElement("ul")
+    partyQuest.innerHTML = `Quest: ${party.quest}`
+    h2.appendChild(partyQuest)
+
+    const partyColor = document.createElement("ul")
+    partyColor.innerHTML = `Color: ${party.color}`
+    h2.appendChild(partyColor)
 }
