@@ -8,14 +8,18 @@ class MembersController < ApplicationController
 
     def create
         member = Member.new(member_params)
+
         if member.save
-            render json: MemberSerializer.new(members), include: [:party]
+            json_response(member, :created)
+        
+        else
+            render json: {message: "Member was not created"}
         end
     end
 
     def show
         member = Member.find_by(id: params[:id])
-        render json: MemberSerializer.new(members), include: [:party]
+        render json: MemberSerializer.new(member), include: [:party]
     end
 
     def update
