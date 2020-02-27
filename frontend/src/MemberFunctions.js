@@ -34,7 +34,7 @@ function renderMembers(membersArray, party_id) {
 function createMembers(party, membersArray) {
     membersArray.forEach(member => {
         let newMember = new Member(member);
-    party.members.push(newMember)
+        party.members.push(newMember)
     })
   }
 
