@@ -36,7 +36,7 @@ const generateMemberForm = (party) => {
 
     form.appendChild(formSubmit)
 
-    document.querySelector('#create-member').addEventListener("submit", formSubmission)
+    document.querySelector("#create-member").addEventListener("submit", formSubmission)
 }
 
 function formSubmission(e) {
@@ -50,5 +50,20 @@ function formSubmission(e) {
         role: e.target.elements.role.value
     }
     
-    saveMember(memberData)
+        saveMember(memberData)
+
+        e.target.elements.name.value = "";
+        e.target.elements.level.value = "";
+        e.target.elements.gender.value = "";
+        e.target.elements.race.value = "";
+        e.target.elements.role.value = "";
+
+        addMember(memberData)
+}
+
+function addMember(member) {
+    const h3 = document.createElement("h3")
+    h3.innerHTML = `${member.name}`
+    membersContainer.appendChild(memberDiv)
+    memberDiv.appendChild(h3)
 }
