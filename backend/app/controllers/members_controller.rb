@@ -18,7 +18,8 @@ class MembersController < ApplicationController
         render json: MemberSerializer.new(members), include: [:party]
     end
 
-    def update    
+    def update
+        member.update(member_params)    
     end
 
     def destroy
