@@ -51,8 +51,8 @@ function addParty(party) {
 
     h2.appendChild(a)
 
-    partiesContainer.appendChild(partiesDiv)
-    partiesDiv.appendChild(h2)
+    partiesContainer.appendChild(partyDiv)
+    partyDiv.appendChild(h2)
 
     const partyQuest = document.createElement("ul")
     partyQuest.innerHTML = `Quest: ${party.quest}`
