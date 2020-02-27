@@ -65,11 +65,25 @@ function formSubmission(e) {
         addMember(memberData)
 }
 
+// MEMBER HAS: Name, Level, Gender, Race, Role
+
 function addMember(member) {
     const h3 = document.createElement("h3")
     h3.innerHTML = `${member.name}`
     membersContainer.appendChild(memberDiv)
     memberDiv.appendChild(h3)
+
+    const memberLevelEl = document.createElement("ul")
+    memberLevelEl.innerHTML = `${member.level}`
+    h3.appendChild(memberLevelEl)
+
+    const memberGenderEl = document.createElement("ul")
+    memberGenderEl.innerHTML = `${member.gender}`
+    h3.appendChild(memberGenderEl)
+
+    const memberRaceEl = document.createElement("ul")
+    memberRaceEl.innerHTML = `${member.race}`
+    h3.appendChild(memberRaceEl)
 
     const memberRoleEl = document.createElement("ul")
     memberRoleEl.innerHTML = `${member.role}`
