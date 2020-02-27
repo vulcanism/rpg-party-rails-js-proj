@@ -47,7 +47,7 @@ function fetchMembers(party_id) {
 }
 
 function listMembers(party) {
-  partyDiv.textContent = "";
+  memberDiv.textContent = "";
   party.members.forEach(member => {    
     addMember(member)
   })

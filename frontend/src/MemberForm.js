@@ -1,6 +1,7 @@
 let placeForm = document.querySelector("div.place-form")
 
 const generateMemberForm = (party) => {
+    placeForm.textContent = "";
     const form = document.createElement("form")
     form.setAttribute("data-id", party.id)
     const formSubmit = document.createElement("button")
@@ -36,6 +37,9 @@ const generateMemberForm = (party) => {
 
     form.appendChild(formSubmit)
 
+    placeForm.appendChild(form)
+    membersContainer.appendChild(placeForm)
+
     document.querySelector("#create-member").addEventListener("submit", formSubmission)
 }
 
@@ -66,4 +70,8 @@ function addMember(member) {
     h3.innerHTML = `${member.name}`
     membersContainer.appendChild(memberDiv)
     memberDiv.appendChild(h3)
+
+    const memberRoleEl = document.createElement("ul")
+    memberRoleEl.innerHTML = `${member.role}`
+    h3.appendChild(memberRoleEl)
 }
