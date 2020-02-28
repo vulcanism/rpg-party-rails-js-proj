@@ -14,7 +14,7 @@ function renderParties(json) {
         let newParty = new Party(party.attributes)
 
         let members = json.included.filter(member => {
-            return member.attributes.party_id == newParty.id
+            return member.attributes.party_id === newParty.id
         })
 
         createMembers(newParty, members)
@@ -45,7 +45,7 @@ function addParty(party) {
             partiesContainer.appendChild(h2)
             partiesContainer.appendChild(h4)
 
-            listMembers(party)
+            listMembers(party);
         })
     })
 

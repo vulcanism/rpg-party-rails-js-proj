@@ -1,12 +1,12 @@
 class Member {
-    constructor(id, name, level, gender, race, role, partyId) {
-        this.id = id;
-        this.name = name;
-        this.level = level;
-        this.gender = gender;
-        this.race = race;
-        this.role = role;
-        this.party_id = partyId;
+    constructor(member) {
+        this.id = member.id;
+        this.name = member.attributes.name;
+        this.level = member.attributes.level;
+        this.gender = member.attributes.gender;
+        this.race = member.attributes.race;
+        this.role = member.attributes.role;
+        this.party_id = member.relationships.party.data.id;
         allMembers.push(this)
     }
 }

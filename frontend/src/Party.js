@@ -29,7 +29,7 @@ class Party {
                 partiesContainer.appendChild(h2)
                 partiesContainer.appendChild(h4)
 
-                listMembers(party)
+                listMembers(party);
             })
         })
 

@@ -9,15 +9,15 @@ let memberDiv = document.createElement("div")
 partyDiv.id = "party-div"
 memberDiv.id = "member-div"
 
-document.addEventListener("DOMContentLoaded", function() {
-    loadPage();
-})
-
 let homeBtn = document.querySelector("#home")
 
 homeBtn.addEventListener("click", function() {
     partiesContainer.textContent= ""
-    loadPage()
+    loadPage();
+})
+
+document.addEventListener("DOMContentLoaded", function() {
+    loadPage();
 })
 
 function loadPage() {
