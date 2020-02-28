@@ -42,10 +42,24 @@ button {
     background-color: #65707B;
     color: #E3E9ED;
     border: none;
+    font-size: 14px;
+    font-weight: 600;
     text-decoration: none;
     padding: 7px 15px;   
     margin-left: auto;
-    margin-right: auto; 
+    margin-right: auto;
+    margin-top: 1em;
+    border-radius: 4px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s; 
+}
+
+button:hover {
+    background-color: #b9bfc6;
+    color: #2A343B;
 }
 
 ul {
