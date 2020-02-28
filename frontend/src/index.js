@@ -13,6 +13,13 @@ document.addEventListener("DOMContentLoaded", function() {
     loadPage();
 })
 
+let homeBtn = document.querySelector("#home")
+
+homeBtn.addEventListener("click", function() {
+    partiesContainer.textContent= ""
+    loadPage()
+})
+
 function loadPage() {
     partiesContainer.textContent = ""
     membersContainer.textContent = ""
