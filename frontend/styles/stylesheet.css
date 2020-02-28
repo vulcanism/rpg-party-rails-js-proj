@@ -12,6 +12,10 @@ h1 {
     color: #2A343B;
 }
 
+h3 {
+    color: #2A343B;
+}
+
 a {
     color: #65707B;
     -o-transition:.5s;
@@ -63,5 +67,5 @@ button:hover {
 }
 
 ul {
-    padding-left: 20px;
+    padding-left: 30px;
 }
