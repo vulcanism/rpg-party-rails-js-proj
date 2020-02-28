@@ -1,6 +1,8 @@
 let placeForm = document.querySelector("div.place-form")
 
 const generateMemberForm = (party) => {
+    const linebreak = document.createElement("br")
+
     placeForm.textContent = "";
     const form = document.createElement("form")
     form.setAttribute("data-id", party.id)
@@ -34,7 +36,8 @@ const generateMemberForm = (party) => {
     roleInput.setAttribute("name", "role")
     roleInput.placeholder = "Role"
     form.appendChild(roleInput)
-
+    
+    form.appendChild(linebreak)
     form.appendChild(formSubmit)
 
     placeForm.appendChild(form)

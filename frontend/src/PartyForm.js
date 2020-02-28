@@ -1,4 +1,6 @@
 const generatePartyForm = () => {
+    const linebreak = document.createElement("br")
+
     const form = document.createElement("form")
     const formSubmit = document.createElement("button")
     formSubmit.textContent = "Create Party"
@@ -12,11 +14,11 @@ const generatePartyForm = () => {
     let nameInput = document.createElement("input")
     nameInput.setAttribute("name", "name")
     nameInput.placeholder = "Party Name"
-    form.appendChild(nameInput)
+    form.appendChild(nameInput)    
 
     let questInput = document.createElement("input")
     questInput.setAttribute("name", "quest")
-    questInput.placeholder = "Quest"
+    questInput.placeholder = "Quest"    
     form.appendChild(questInput)
 
     let colorInput = document.createElement("input")
@@ -24,6 +26,7 @@ const generatePartyForm = () => {
     colorInput.placeholder = "Color"
     form.appendChild(colorInput)
 
+    form.appendChild(linebreak)
     form.appendChild(formSubmit)
 
     form.appendChild(currentParties)
