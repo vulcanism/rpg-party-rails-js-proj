@@ -1,24 +1,11 @@
-# README
+# RPG Party Builder
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to my SPA project for Flatiron! The RPG Party builder allows a user to create the perfect rpg party to take on an adventure. After choosing a party name, quest, and color, add as many members as it takes to complete your journey!
 
-Things you may want to cover:
+# Installation
 
-* Ruby version
+* Fork and clone this repository
 
-* System dependencies
+* Cd into the backend and run `<rails s>`
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Open `<index.html>` (located in the frontend) in your browser and begin building your ideal RPG party!
