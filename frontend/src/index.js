@@ -31,6 +31,8 @@ function loadPage() {
     fetchParties();
     partiesContainer.appendChild(generatePartyForm());
 
+    fetchMembers();
+
     document.querySelector("#create-party").addEventListener("submit", function(e) {
         e.preventDefault();
 
