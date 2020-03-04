@@ -30,7 +30,7 @@ a:link {
 }
 
 a:hover {
-    color: #b9bfc6;
+    color: #b9bfc6;    
 }
 
 form {
@@ -64,6 +64,7 @@ button {
 button:hover {
     background-color: #b9bfc6;
     color: #2A343B;
+    cursor: pointer;
 }
 
 ul {
