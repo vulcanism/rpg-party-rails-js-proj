@@ -5,8 +5,12 @@ const generatePartyForm = () => {
     const formSubmit = document.createElement("button")
     formSubmit.textContent = "Create Party"
 
+    const sortBtn = document.createElement("button")
+    sortBtn.textContent = "Sort Parties"
+    sortBtn.addEventListener("click", sortParties)
+
     form.id = "create-party"
-    formSubmit.id = "form-submit"
+    formSubmit.id = "form-submit"    
 
     const currentParties = document.createElement("h2")
     currentParties.textContent = "Current Parties"
@@ -28,6 +32,8 @@ const generatePartyForm = () => {
 
     form.appendChild(linebreak)
     form.appendChild(formSubmit)
+    form.appendChild(sortBtn)
+    
 
     form.appendChild(currentParties)
 

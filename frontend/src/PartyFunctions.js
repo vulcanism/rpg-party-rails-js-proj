@@ -81,3 +81,89 @@ function saveParty(party) {
     })
 
 }
+
+function sortParties(e) {
+    e.preventDefault()
+    partyDiv.innerHTML = ""
+
+    return fetch(PARTIES_URL)
+    .then(response => response.json())
+    .then(json => {
+        let sortedParties = json.data.sort(function(a, b) {
+            // debugger
+            let nameA = a.attributes.name.toUpperCase(); // ignore upper and lowercase
+            let nameB = b.attributes.name.toUpperCase(); // ignore upper and lowercase
+            if (nameA < nameB) {
+                 return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+            
+        })
+        sortedParties.forEach(party => {            
+            let newParty = new Party(party.attributes)
+            newParty.render()
+        })
+    })
+}
+
+// Add button that, on click, fetches a party's members and sorts alphabetically
+
+// json.sort -> json.sort is not a function
+// json.data.sort -> cannot read property "toUpperCase" of undefined
+
+// Making it a class method doesn't work, as it isn't accessible by the form (and a few others)
+
+// function sortMembersAlpha(e) {
+//     e.preventDefault()
+    
+//     return fetch(PARTIES_URL)
+//     .then(response => response.json())
+//     .then(json => {             
+    //    let sortedMembers = json.sort(function(a, b) {
+    //         let nameA = a.name.toUpperCase(); // ignore upper and lowercase
+    //         let nameB = b.name.toUpperCase(); // ignore upper and lowercase
+    //         if (nameA < nameB) {
+    //           return -1;
+    //        }
+    //        if (nameA > nameB) {
+    //          return 1;
+    //        }
+    //    })
+
+        //  console.log(json.data)
+        
+        // Can access the members array here...but applying sort gets the same undefined error
+        // Need an index for .relationships.members to work, so can't just assign it a variable        
+//     }
+
+// )}
+
+
+// This one fetches from MEMBERS, not PARTIES. Name is more readily accessible, but, again--
+// json.sort is not a function
+
+// function sortMembersBeta(e) {
+//     e.preventDefault()
+    
+//     return fetch(MEMBERS_URL)
+//     .then(response => response.json())
+//     .then(json => {
+    //    let sortedMembers = json.sort(function(a, b) {
+    //         let nameA = a.name.toUpperCase(); // ignore upper and lowercase
+    //         let nameB = b.name.toUpperCase(); // ignore upper and lowercase
+    //         if (nameA < nameB) {
+    //           return -1;
+    //        }
+    //        if (nameA > nameB) {
+    //          return 1;
+    //        }
+    //    })
+
+        // console.log(json.data[1].attributes)
+        
+        // Again, need an index for .attributes to work, otherwise it's undefined
+//     }
+
+// )}
